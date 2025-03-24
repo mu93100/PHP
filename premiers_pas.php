@@ -1,5 +1,3 @@
-<?php   ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -392,7 +390,7 @@ if (isset($age) && $age>0 && $age<120) {
 br();
 ?>
 <h2>switch</h2>
-<p>la cond SWITCH est une autre syntaxe du if/else qd on veut comparer une var. à des val. multiples</p>
+<p>la cond SWITCH est une autre syntaxe du if/else qd on veut comparer une var. à des val. multiples<br> ATTENTION ::: ne pas mélanger les types de var / int et string</p>
 
 <?php
 $coul="rouge";
@@ -413,51 +411,3 @@ switch($coul){
     
 }
 ?>
-<!-- // Exercice 9 : Catégoriser une personne selon son âge
-// *  Objectif : Ecrire une/des condition(s) qui classe une personnee 
-en 'enfant','adolescent','adulte' ou 'senior' selon son age
-$age
-<?php
-$age10=10;
-switch ($age10){
-    case $age10<3 : 
-        echo "<p>BB</p>";
-        break; 
-    case $age10>3 && $age10<13: 
-        echo "<p>ENFANT</p>";
-        break;
-    case $age10>12 && $age10<18: 
-        echo "<p>ADO</p>";
-        break; 
-    case $age10 > 17 && $age10 < 65: 
-        echo "<p>AD</p>";
-        break;
-    case $age10>64: 
-        echo "<p>SENIOR</p>";
-        break;
-    default: 
-        echo "<p>ce n'est pas un âge</p>";
-    break;
-};
-
-?>
-// /** Exercice 10 : Vérifier la cohérence des réponses avec l'opérateur XOR
-// *  Objectif : Ecrire des conditions et vérifier la cohérence de ces réponses
-// *  Exemple : Nous avons une vérification a faire pour vérifier si l'utilisateur 
-se connecte avec son empreinte digitale ou son mdp (il ne peut pas faire les deux en même temps)
-// *  xor : L'une des deux conditions doit être vraie seulement, si les deux sont vraies, alors il retournera false
-
-// *  contrairement à || (or) qui vérifiera si au moins l'une des deux conditions est vraie, même si les deux le sont
-
-// /** Exercice 3 : Afficher le jour de la semaine
-// *  Objectif : Ecrire une condition 'switch' pour afficher un message en fonction du jour de la semaine, 
-le jour est donnée par une variable $jour en number (1 pour lundi, 2 pour mardi etc...)/
-
-// /** Exercice 4 : Comparaison de chaines de caractères
-// *  Objectif : Ecrire une condition qui compare si deux variables sont identiques, 
-la condition doit vérifier le type ET la valeur 
-// */ -->
-
-
-</body>
-</html> 
