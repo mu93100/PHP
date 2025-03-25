@@ -411,3 +411,18 @@ switch($coul){
     
 }
 ?>
+<h3>Fonction de débugage  var_dump et print_r</h3>
+<p>pour connaitre longueur du tab (size=), les index, le type de chaque élément, long des strings (length=)<br> 
++ chemin pour fichier avec N° de ligne ds fichier php<br> A METTRE EN COMM</p>
+<?php 
+//array() --> Fo native de PHP
+$tab = array("element0", 15, 12.5, false);
+
+var_dump($tab);
+?>
+<p>affiche C:\wamp64\www\PHP\premiers_pas.php:420:
+array (size=4)
+  0 => string 'element0' (length=8)
+  1 => int 15
+  2 => float 12.5
+  3 => boolean false</p>
