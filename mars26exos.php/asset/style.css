@@ -1,0 +1,67 @@
+*{
+    color: black;
+    box-sizing: border-box;
+    cursor: crosshair;
+    /* border: 1px dotted blue; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    width: 90%;
+}
+header{
+    border-radius: 0 0 1rem 1rem ;
+    background-color: white;
+    z-index: 1;
+}
+main{
+    background-color: black; 
+    margin-top: -2rem ;
+    z-index: 1;  
+    border-radius: -1rem -1rem 0 0; 
+}
+nav{
+    display: flex;
+    justify-content: space-between; 
+    gap: 1rem;
+    border: 1px dotted aquamarine;
+    border-radius: 0 0 1rem 1rem ;
+    padding-bottom: 2rem;
+}
+.menu{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px dotted aquamarine;
+    font-weight: 900;
+}
+a{
+    text-decoration: none;
+    border: 1px dotted aquamarine;
+    padding: 0 1.5rem 0 1.5rem;
+}
+button{
+    background: linear-gradient(0deg, rgb(212, 252, 239) 0%, rgba(253,187,45,1) 100%);  
+    border: 1px dotted aquamarine;
+}
+
+.container_home{
+    width: 90%;
+    height: 50rem;
+    border: 1px dotted aquamarine;
+    padding: 3rem;
+}
+h1{
+    color: rgb(191, 254, 233);
+    font-size: 2rem;
+    font-weight: 900;
+}
+.card{
+background-color: white;
+color: black;
+}
+.img_user{
+    width: 3rem;
+    height: auto;
+    border-radius: 50%;
+}

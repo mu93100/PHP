@@ -68,6 +68,7 @@ define ("ROOT", "https://github.com/PoleS-dev/premier_jour");
 // DEFINE ::: déclarer une constante et on dit ce qu'il y a à l'intérieur 
 // utilisée pour ce qui ne change pas et que l'on met dans un fichier ou doss spécial CONFIG 
 // (ex adresse URL ETC config avec Fo utilisées)
+//  A UTILISER POUR LIEN
 
 
 echo ORDI."<br>";

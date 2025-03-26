@@ -126,6 +126,41 @@ if (isset($tab4) && !empty($tab4)) {
         $tab4[2]['telephone'] = '0601020304'
     }
 }
+// ousmane
+// <?php
+// $tab_multi = [
+//         [
+//             'prenom' => 'Julien',
+//             'nom'    => 'Dupon',
+//           'telephone' => '0601020304'
+//         ],
+//      [
+//             'prenom' => 'Nicolas',
+//             'nom'    => 'Duran',
+//             'telephone' => '0601020304'
+//         ],
+//     [
+//             'prenom' => 'Pierre',
+//             'nom'    => 'Dulac'
+//         ],];
+ 
+ 
+// if ( isset($tab4) && !empty($tab4) ){
+//     $tab4[]=['prenom'=> 'Nawel ',
+//             'nom'=> 'Denis',
+//             'telephone'=>'0601020304'];
+// }else{
+//     $tab4=$tab_multi;
+//     if (!isset ($tab4[2]["telephone"]))
+//         $tab4[2]["telephone"]="061122334400";
+// }
+// echo "<pre>";
+// var_dump($tab4);
+// echo "</pre>";
+// echo "<pre>";
+// var_dump($tab_multi);
+// echo "</pre>";
+// ?>
 
 ?>
 </body>

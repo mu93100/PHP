@@ -1,0 +1,151 @@
+
+/*
+*{
+    box-sizing: border-box;
+    margin: 40;
+    padding: 40;
+}
+
+details{
+    color: blue;
+    font-size: 40px;
+}
+
+div{
+    font-size: 10px;
+}
+
+p{
+    font-size: 0.5em;
+    margin: 50px;
+}
+
+
+
+
+div{
+    height: 100px;
+    background-color: aqua;
+}
+
+@media screen and (min-width:768px)
+@media screen and (min-width:768px)
+
+@media screen and (min-width:768px) and (max-width:993px) {
+    back
+}
+*/
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+#form1{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 150px;
+}
+
+#form1 section{ 
+    display :flex;
+    justify-content: space-between;
+}
+
+#form1 section fieldset{
+    width: 49%;
+    height: auto;
+    padding: 20px;
+}
+
+#form1 section fieldset legend{
+    padding: 0px 10px;
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#form1 fieldset div{
+    padding: 8px 0px;
+    display: flex;
+}
+
+#form1 section fieldset div label:not(label[for="homme"]), 
+#form1 section fieldset div p, #dip{
+    width: 250px;
+    display: block;
+
+}
+#form1 section fieldset div input:not(input[type="button"], input[type="radio"], input[type="checkbox"], input[type="color"]){
+    width: 200px;
+}
+
+label[for="homme"], label[for="femme"]{
+    margin-right: 20px;
+    margin-left: 5px;
+
+}
+#form1 fieldset div span{
+    display: flex;
+}
+
+input[type="button"]{
+    margin-left:15px;
+    display: block;
+    padding: 5px 20px;
+    border-radius:5px;
+    background-color: chartreuse;
+    color: white;
+    border-color: rgb(249, 144, 6);
+    box-shadow: 1px 1px 5px black;
+}
+
+input[type="button"]:hover{
+    background-color: black;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#form1 fieldset:last-child div span{
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"]{
+    margin-right: 10px;
+}
+
+textarea{
+    width: 70%;
+    margin-top: 30px;
+    min-height: 100px;
+    resize: none;
+   
+}
+/*
+#label [type="tel"]{
+    min=8;
+    max= 8
+}
+*/
+
+#form1>div>input{
+    padding: 10px 30px;
+    border-radius: 8px;
+    margin: 0 10px;
+    box-shadow: 3px 3px 5px chartreuse;
+    background-color: black;
+    cursor:crosshair;
+    color: rgb(232, 221, 243);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#form1>div>input:first-child:hover{
+    background-color: rgb(81, 63, 2);
+}
+
+#form1>div>input:last-child:hover{
+    background-color: rgb(254, 29, 8);
+}
