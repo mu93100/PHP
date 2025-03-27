@@ -10,7 +10,7 @@ include_once "../component/header.php";
 
 <div class="container_home">
     <h1>H O M E</h1>  
-    <img src="https://image.lematin.ch/2025/03/18/333d5bba-22c1-4a1d-a8c0-7cd03b7fe64b.jpeg?auto=format%2Ccompress%2Cenhance&fit=max&w=1200&h=1200&rect=0%2C0%2C4000%2C2662&fp-x=0.584&fp-y=0.51427498121713&s=588764506d624da4c624a4f3b2a5bfcc" alt="">
+    <img class="img_home" src="https://image.lematin.ch/2025/03/18/333d5bba-22c1-4a1d-a8c0-7cd03b7fe64b.jpeg?auto=format%2Ccompress%2Cenhance&fit=max&w=1200&h=1200&rect=0%2C0%2C4000%2C2662&fp-x=0.584&fp-y=0.51427498121713&s=588764506d624da4c624a4f3b2a5bfcc" alt="">
 
     <div class="produits">
         <?php
@@ -31,6 +31,18 @@ include_once "../component/header.php";
                 "category"=>"vêtements"
             ]
         ];
+        
+        foreach ($produit as $element) {
+
+            foreach ($element as $cle=> $value ): ?>
+                <!-- // echo "<p>* * * bonjour" . " " . $cle . " " . $value . " * * *</p>";} -->
+
+                <div>
+                    <p> hfhhfh <?php  echo "$value" ; ?> </p>
+                </div>
+
+                <?php  endforeach;
+            }
         ?>
     </div>  
 </div>

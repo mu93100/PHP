@@ -1,5 +1,5 @@
 *{
-    color: black;
+    color: white;
     box-sizing: border-box;
     cursor: crosshair;
     /* border: 1px dotted blue; */
@@ -7,17 +7,28 @@
 }
 body{
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 header{
     border-radius: 0 0 1rem 1rem ;
     background-color: white;
+    color: black;
     z-index: 1;
 }
 main{
     background-color: black; 
     margin-top: -2rem ;
     z-index: 1;  
-    border-radius: -1rem -1rem 0 0; 
+    border-radius: -1rem -1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
 }
 nav{
     display: flex;
@@ -28,7 +39,7 @@ nav{
     padding-bottom: 2rem;
 }
 .menu{
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -64,4 +75,11 @@ color: black;
     width: 3rem;
     height: auto;
     border-radius: 50%;
+}
+.img_home{
+    width: 30%;
+    height: auto;
+}
+.produits{
+    color: blue;
 }
