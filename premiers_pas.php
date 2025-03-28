@@ -66,6 +66,8 @@ echo "$content";
 define ("ORDI", "je suis un ordi");
 define ("ROOT", "https://github.com/PoleS-dev/premier_jour");
 // DEFINE ::: déclarer une constante et on dit ce qu'il y a à l'intérieur 
+
+// à utiliser par ex pour appeler l'URL du site, ou les pages ds site
 // utilisée pour ce qui ne change pas et que l'on met dans un fichier ou doss spécial CONFIG 
 // (ex adresse URL ETC config avec Fo utilisées)
 //  A UTILISER POUR LIEN
@@ -85,7 +87,7 @@ echo __LINE__."<br>"; // affiche le N° de ligne
 echo __FILE__."<br>"; // affiche chemin complet vers fichier
 echo __DIR__."<br>"; // affiche chemin complet vers doss
 // ex matthieu
-// include_once __DIR__ . "/../component/header.php";
+// include_once __DIR__ . "/../component/header.php"; 
 // include_once __DIR__ . "/../component/footer.php";
 
 ?>

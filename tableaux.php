@@ -65,7 +65,7 @@ echo "</pre>";
 br();
 echo $user1["email"];
 //Ou
- 
+
 $user2=array(
     "id"=>999,
     "name_username"=>"Nono",
@@ -201,5 +201,162 @@ echo count($usernassuf);
 br();
 echo count($usernassuf ["données perso"]);
 ?>
+
+<h1>B O U C L E S</h1>
+
+<H2>for()</H2>
+<h4>avec boucle for() : + de contrôle sur l'index (i)</h4>
+<p>((ex : on peut commencer par l'index que l'on veut (on peut commncer à element 10 si on a 50éléments ds tab) 
+<br> $i+2 --> on boucle pas ts les éléments)) </p>
+    
+<?php   
+$tab6=["123", "124", "125"];
+for($i=0; $i<count($tab6); $i++){
+    echo $tab6[$i];
+    br();
+}
+?>
+<h4>boucle for() ds tableau associatif ::: MARCHE PAS <br>
+MARCHE UNIQUEMENT SI ON MET DES INDEX </h4> 
+<P>$tab7=[
+    "id"=>789,
+    "email"=>"gg@gmail.com",
+    "age"=>30
+];   --> MARCHE PAS</P>   
+<P>$tab7=[
+    0=>789,
+    1=>"gg@gmail.com",
+    2=>30
+];   --> MARCHE </P> 
+
+<?php   
+$tab7=[
+    0=>789,
+    1=>"gg@gmail.com",
+    2=>30
+];
+
+for ($i=0; $i <count($tab7) ; $i++) { 
+    echo $tab7[$i];
+    br();
+}
+?>
+
+<H2>foreach()</H2>
+<p>La boucle foreach() fonctionne uniquement sur tableaux ou objets, 
+    ERREUR si on boucle sur une variable non array (tableau)</p>
+    <p>le mot clé AS est OBLIGATOIRE</p>
+    <p>2 façon d'écrire la boucle foreach() ::
+        foreach ($variable as $key => $value) {
+            # code...
+            }
+
+            OU  !! PAS CLAIR !!
+        
+
+        </p>
+
+<?php   
+$userfor=[
+    "id" => 123,
+    "email" => "mu@gmail.com",
+    "âge" => 25
+];
+foreach ($userfor as $valeur) {
+    echo "je suis la valeur : " . $valeur ;
+    br();
+}
+br();
+echo "<p>Pour afficher la clé ET la valeur</p>";
+foreach ($userfor as $clé => $valeur) {
+    echo  "je suis la clé : " . $clé .  " et je suis la valeur : " . $valeur ;
+    br();
+}
+
+$ville = ["marseille", "bruay en artois", "paris"];
+br();
+foreach ($ville as $index) {
+    echo "ma ville est : " . $index;
+    br();
+}
+foreach ($ville as $index => $valeur) {
+    echo "ma ville est : " . $valeur  . "et son index est " . $index;
+    br();
+}
+?>   
+
+
+<H2>while()</H2>
+<p>avec boucle while() : </p>
+<p> i --> val de départ de la boucle <br> while($i <= 5)  ça veut dire ::: tant que $i est < à 5 --> tu boucles(nous entrons ds la boucle)
+<br>echo "$i - - - " --> tu affiches la val de $i (+ des tirets SANS CONCATENATION !!!
+<br>echo "$i - - - " --> ON N'OUBLIE PAS D'INCREMENTER DE 1 à chaque tour de boucle pour ne pas avoir une boucle infinie!!!</p>
+    
+<?php   
+$i=0; 
+while ($i <= 5) {
+    echo "$i - - - ";
+    $i++;
+}
+?> 
+<H2>do{} while()</H2>
+<?php 
+$j=11;
+do {
+    echo $j++ ."je fais tour de boucle";
+    br();
+} while ($j>10 && $j<15);
+?>
+
 </body>
 </html>
+
+
+
+
+/** Exercice 4 : Boucle for
+*  Objectif : Créer une boucle for qui affiche une table de multiplication (de 1 à 10) pour un nb donné
+
+/** Exercice 5 : Boucles imbriquées pour créer une grille
+*  Objectif : Créer une boucle for qui affiche une grille de 5x5 dans un tableau html (<table>).
+*  Chaque cellule doit contenir les coordonnées de la cellule (par exemple (1,1) pour 1ère cellule)
+
+
+/** Exercice 6 : foreach pour un tableau associatif
+*  Objectif : Créer un tableau associatif avec les informations suivantes : 'prenom','nom','email','age'
+*             Afficher chaque information sous la forme clé : valeur dans des paragraphes, 
+l'email doit être dans un lien (<a>)
+
+/** Exercice 7 : Foreach avec des clés personnalisées
+*  Objectif : Créer un tableau associatif représentant un menu de navigation, 
+les clés seront les titres des pages ('accueil','produits','contact') et les valeurs les liens correspondants.
+* Afficher chaque element du menu sous forme de liens (<a>)
+
+* /** Exercice 8 : Boucles imbriquées et conditions
+*  Objectif : Créer un tableau HTML de 10x10 dans lequel chaque cellule contient un nb aléatoire entre 1 et 100. 
+*  Mettre un background vert sur les cellules contenant un nombre pair
+
+/** Exercice 9 : Generation d'un calendrier
+*  Objectif : Utiliser une boucle for pour générer un calendrier mensuel (de 1 à 31), 
+puis y afficher les jours dans un tableau HTML, les week ends devront être en rouge
+
+/** Exercice 10 : Tableau de tableaux
+*  Objectif : Créer un tableau contenant trois sous tableaux, 
+chacun représentera une personne avec les clés 'prenom','nom','age'. 
+*  Afficher toutes les informations sous forme de liste HTML ordonnées ('<ol>'), 
+    où chaque personne a sa propre sous-liste (<ul>)
+*  Résultat attendu : 
+
+*  <ol> 
+
+*  <li> Personne 1 </li>
+*  <ul> 
+*  <li> prénom : prenom </li>
+*  <li> nom : nom </li>
+*  <li> age: age </li>
+*  </ul>
+*  <li> Personne 2 </li>
+
+
+
+*/
