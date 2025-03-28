@@ -314,17 +314,13 @@ do {
 
 
 
-/** Exercice 4 : Boucle for
-*  Objectif : Créer une boucle for qui affiche une table de multiplication (de 1 à 10) pour un nb donné
 
-/** Exercice 5 : Boucles imbriquées pour créer une grille
-*  Objectif : Créer une boucle for qui affiche une grille de 5x5 dans un tableau html (<table>).
-*  Chaque cellule doit contenir les coordonnées de la cellule (par exemple (1,1) pour 1ère cellule)
 
 
 /** Exercice 6 : foreach pour un tableau associatif
-*  Objectif : Créer un tableau associatif avec les informations suivantes : 'prenom','nom','email','age'
-*             Afficher chaque information sous la forme clé : valeur dans des paragraphes, 
+*  Objectif : 
+    Créer un tableau associatif avec les informations suivantes : 'prenom','nom','email','age'
+* Afficher chaque information sous la forme clé : valeur dans des paragraphes, 
 l'email doit être dans un lien (<a>)
 
 /** Exercice 7 : Foreach avec des clés personnalisées
