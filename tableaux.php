@@ -46,6 +46,14 @@ print_r(($tab));
 echo "</pre>";
 ?>
 
+<h4>var_export</h4>
+<p>var_export affiche false si pas de val.</p>
+<?php
+echo "<pre>";
+var_export($tab);
+echo "</pre>";
+?>
+
 
 
 <h2>2. tableau associatif</h2>
@@ -89,6 +97,7 @@ affichage tab indexé en print_r() ou var_dump() = affichage print_r() tab assoc
 ?>
 
 <h2>3. tableau multidimensionnel</h2>
+<p>tableaux ds tableau</p>
 <?php
 $tab_multi=[
     "najiba",
@@ -200,11 +209,17 @@ br();
 echo count($usernassuf);
 br();
 echo count($usernassuf ["données perso"]);
+array_push($usernassuf,["aaa"=>"bbbb"]); // écrit comme ça array_push rajoute un autre tableau
+var_dump( $usernassuf);
+$usernassuf["hhh"]="gggg";// écrit comme ça array_push rajoute une autre ligne --> clé + valeur
+var_dump(  $usernassuf);
+
 ?>
 
 <h1>B O U C L E S</h1>
 
 <H2>for()</H2>
+<p>uniquement pour tab. indéxés</p>
 <h4>avec boucle for() : + de contrôle sur l'index (i)</h4>
 <p>((ex : on peut commencer par l'index que l'on veut (on peut commncer à element 10 si on a 50éléments ds tab) 
 <br> $i+2 --> on boucle pas ts les éléments)) </p>
@@ -243,6 +258,7 @@ for ($i=0; $i <count($tab7) ; $i++) {
 ?>
 
 <H2>foreach()</H2>
+<p> pour tab. indéxés multidimensionnels et associatifs</p>
 <p>La boucle foreach() fonctionne uniquement sur tableaux ou objets, 
     ERREUR si on boucle sur une variable non array (tableau)</p>
     <p>le mot clé AS est OBLIGATOIRE</p>
@@ -283,19 +299,64 @@ foreach ($ville as $index => $valeur) {
     echo "ma ville est : " . $valeur  . "et son index est " . $index;
     br();
 }
+br();
+$dept = [
+    "nom" => "ain",
+    "nb" => "01",
+    "ville" =>[
+        "ville 1"=> "montreuil",
+        "ville2" => "pantin",
+    ]
+    ];
+foreach ($dept["ville"] as $key => $value) {
+    echo "on boucle le tab. ds le tab." . $key . " : " . $value;
+    br();
+}
+foreach ($dept["ville"] as  $value) {
+    echo "on boucle le tab. ds le tab. résultat val. uniquement". " : "  . $value;
+    br();
+}
+echo "<hr>\$tab8</hr>";
+$tab8 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+];
+foreach ($tab8 as $tab8index) {
+    foreach ($tab8index as $nb) {
+        
+        echo "$nb, ";
+    }br();
+};
+
+foreach ($tab8 as $index=>$tab8index) {
+    echo "tableau index $index : ";
+    foreach ($tab8index as $nb) {
+        echo " $nb, ";
+    }br();
+};
 ?>   
 
 
 <H2>while()</H2>
 <p>avec boucle while() : </p>
 <p> i --> val de départ de la boucle <br> while($i <= 5)  ça veut dire ::: tant que $i est < à 5 --> tu boucles(nous entrons ds la boucle)
-<br>echo "$i - - - " --> tu affiches la val de $i (+ des tirets SANS CONCATENATION !!!
-<br>echo "$i - - - " --> ON N'OUBLIE PAS D'INCREMENTER DE 1 à chaque tour de boucle pour ne pas avoir une boucle infinie!!!</p>
+<br>echo "$i - - - " --> tu affiches la val de $i (+ des tirets SANS CONCATENATION !!!)
+<br>$i++ --> ON N'OUBLIE PAS D'INCREMENTER DE 1 à chaque tour de boucle pour ne pas avoir une boucle infinie!!!</p>
     
 <?php   
 $i=0; 
 while ($i <= 5) {
     echo "$i - - - ";
+    $i++;
+}
+br();
+while ($i <= 10) {
+    if ($i==10) {
+    echo "$i F I N de la boucle";
+    } else {
+    echo "$i - - - ";
+    }
     $i++;
 }
 ?> 
@@ -306,6 +367,8 @@ do {
     echo $j++ ."je fais tour de boucle";
     br();
 } while ($j>10 && $j<15);
+
+
 ?>
 
 </body>
