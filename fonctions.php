@@ -108,7 +108,8 @@ function add($nb,$nb2){
 }
 echo add($a,$b);
 ?>
-<p>on peut utiliser le résultat du return  pour un autre calcul</p>
+<p>on peut utiliser le résultat du return pour un autre calcul</p>
+<p>return permet de sortir le resultat de la Fo pour autre chose</p>
 <h3>variables locales et variables globales</h3>
 <p>$var=6;  --> variable globale === en dehors d'une Fo</p>
 
@@ -139,50 +140,51 @@ br();
 br();
 br();
 br();
+echo "<h2>Fonctions natives</h2>";br();
 echo "================ TABLEAUX =================\n\n";
-
+br();
 // array_push() : Ajoute des éléments à la fin d'un tableau
 $fruits = ["pomme", "banane"];
 array_push($fruits, "orange");
 echo "array_push : ajoute 'orange'\n";
-print_r($fruits);
+print_r($fruits);br();br();
 
 // array_pop() : Supprime le dernier élément
 array_pop($fruits);
-echo "array_pop : retire le dernier élément\n";
-print_r($fruits);
+echo "array_pop : retire le dernier élément\n";br();
+print_r($fruits);br();br();
 
 // array_unshift() : Ajoute au début
 array_unshift($fruits, "kiwi");
-echo "array_unshift : ajoute 'kiwi' au début\n";
-print_r($fruits);
+echo "array_unshift : ajoute 'kiwi' au début\n";br();
+print_r($fruits);br();br();
 
 // array_keys() : Renvoie les clés d’un tableau
 $infos = ["nom" => "Alice", "email" => "alice@test.com"];
-echo "array_keys : affiche les clés\n";
-print_r(array_keys($infos));
+echo "array_keys : affiche les clés\n";br();
+print_r(array_keys($infos));br();br();
 
 // in_array() : Vérifie si une valeur est présente
 echo "in_array : 'Alice' est-il dans les valeurs ? ";
-echo in_array("Alice", $infos) ? "Oui\n" : "Non\n";
+echo in_array("Alice", $infos) ? "Oui\n" : "Non\n";br();br();
 
 // count() : Compte le nombre d’éléments
-echo "count : nombre de fruits = " . count($fruits) . "\n\n";
-echo "================ CHAINES =================\n\n";
+echo "count : nombre de fruits = " . count($fruits) . "\n\n";br();
+echo "================ CHAINES =================\n\n";br();
 
 // strlen() : Longueur d’une chaîne
 $txt = " Hello ";
-echo "strlen : longueur de '$txt' = " . strlen($txt) . "\n";
+echo "strlen : longueur de '$txt' = " . strlen($txt) . "\n";br();
 
 // trim() : Supprime les espaces
-echo "trim : sans espaces = '" . trim($txt) . "'\n";
+echo "trim : sans espaces = '" . trim($txt) . "'\n";br();
 
 // strtoupper() / strtolower()
-echo "strtoupper : " . strtoupper("bonjour") . "\n";
-echo "strtolower : " . strtolower("BObOUR") . "\n";
+echo "strtoupper : " . strtoupper("bonjour") . "\n";br();
+echo "strtolower : " . strtolower("BObOUR") . "\n";br();
 
 // ucfirst() : Majuscule à la 1re lettre
-echo "ucfirst : " . ucfirst("salut") . "\n";
+echo "ucfirst : " . ucfirst("salut") . "\n";br();
 
 // explode() : Découpe une chaîne
 echo "<br>";
@@ -201,59 +203,59 @@ echo "</pre>";
 // implode() : Transforme un tableau en chaîne
 $tab = ["PHP", "HTML", "CSS"];
 echo "implode : ";
-echo implode(" - ", $tab) . "\n\n";
-echo "================ MATH =================\n\n";
+echo implode(" - ", $tab) . "\n\n";br();
+echo "================ MATH =================\n\n";br();
 
 // abs() : valeur absolue
-echo "abs(-10) = " . abs(-10) . "\n";
+echo "abs(-10) = " . abs(-10) . "\n";br();
 
 // round() : arrondi standard
-echo "round(4.6) = " . round(4.6) . "\n";
+echo "round(4.6) = " . round(4.6) . "\n";br();
 
 // floor() / ceil()
-echo "floor(4.8) = " . floor(4.8) . "\n";
-echo "ceil(4.1) = " . ceil(4.1) . "\n";
+echo "floor(4.8) = " . floor(4.8) . "\n";br();
+echo "ceil(4.1) = " . ceil(4.1) . "\n";br();
 
 // rand() : nombre aléatoire
-echo "rand(1, 10) = " . rand(1, 10) . "\n\n";
-echo "================ DATES =================\n\n";
+echo "rand(1, 10) = " . rand(1, 10) . "\n\n";br();
+echo "================ DATES =================\n\n";br();
 
 // date() : formatage de la date
-echo "date : " . date("Y-m-d H:i:s") . "\n";
+echo "date : " . date("Y-m-d H:i:s") . "\n";br();
 
 // time() : timestamp actuel
-echo "time : " . time() . "\n";
+echo "time : " . time() . "\n";br();
 
 // strtotime() : convertir une date en timestamp
 $ts = strtotime("2025-01-01");
-echo "strtotime('2025-01-01') = " . $ts . "\n";
-echo "formaté = " . date("d/m/Y", $ts) . "\n\n";
-echo "================ AUTRES =================\n\n";
+echo "strtotime('2025-01-01') = " . $ts . "\n";br();
+echo "formaté = " . date("d/m/Y", $ts) . "\n\n";br();
+echo "================ AUTRES =================\n\n";br();
 
 // isset() : variable définie ?
 $val = "test";
-echo "isset(\$val) : " . (isset($val) ? "Oui\n" : "Non\n");
+echo "isset(\$val) : " . (isset($val) ? "Oui\n" : "Non\n");br();
 
 // empty() : variable vide ?
 $vide = "";
-echo "empty(\$vide) : " . (empty($vide) ? "Oui\n" : "Non\n");
+echo "empty(\$vide) : " . (empty($vide) ? "Oui\n" : "Non\n");br();
 
 // is_array()
-echo "is_array(\$fruits) : " . (is_array($fruits) ? "Oui\n" : "Non\n");
+echo "is_array(\$fruits) : " . (is_array($fruits) ? "Oui\n" : "Non\n");br();
 
 // var_dump() : type + valeur
-echo "var_dump de \$tab :\n";
+echo "var_dump de \$tab :\n";br();
 var_dump($tab);
 
 // print_r() : affiche un tableau
-echo "print_r de \$infos :\n";
+echo "print_r de \$infos :\n";br();
 print_r($infos);
 
 // die() : termine le script (commenté ici)
 // die("Arrêt du script");
 // include() : pour inclure un fichier PHP
-echo "\ninclude() permet d'intégrer un fichier PHP externe.\n";
-echo "\n🎉 Fin du script test des fonctions prédéfinies PHP 🎉\n";
+echo "\ninclude() permet d'intégrer un fichier PHP externe.\n";br();
+echo "\n🎉 Fin du script test des fonctions prédéfinies PHP 🎉\n";br();
 ?>
 
 }
@@ -274,7 +276,7 @@ br();
 
 
 
-<h2>Fonctions </h2>
+
 <?php
 ?>
 </body>

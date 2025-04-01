@@ -161,8 +161,11 @@ print_r($tab3);
 echo "</pre>";
 ?>
 
-<h3>Ajouter 1 ou +sieurs éléments avec array_push</h3>
+<h3>Ajouter 1 ou +sieurs éléments à la fin avec array_push</h3>
 <p>array_push($tableauAmodifier, "élément à ajouter") </p>
+<h3>array_push peut rajouter un autre tab. à tab. multidimensionnel</h3>
+<p>array_push($tableauAmodifier, ["clé à ajouter"=>"val. à ajouter"]);</p>
+
 <?php
 
 array_push($tab3, "élément ajouté avec array_push", "2ème élément ajouté avec array_push");
