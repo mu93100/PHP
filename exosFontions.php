@@ -247,27 +247,77 @@ echo "<hr><p>EXERCICE 2 — Affichage d’une fiche produit en html</p>";
     border: 3px dotted black;
     padding: 0.1rem;
 }
+.card33{
+    /* width: 5rem;
+    height: 10rem; */
+    box-shadow: 10px 10px 33px 10px rgba(72, 52, 251, 0.79);
+    border: 3px dotted black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .card3{
     width: 5rem;
     height: 10rem;
-    box-shadow: 10px 18px 53px 14px rgba(0,0,255,0.79);
+    box-shadow: 10px 10px 33px 4px rgba(251, 118, 52, 0.79);
     border: 3px dotted black;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
 }
 .half_card3{
-    background-color: rgba(0,0,255,0.79); 
+    background-color: rgba(26, 255, 0, 0.79); 
     color: white;
+    font-weight: 900;
     border: 3px dotted black;
-    border-radius: 2rem 2rem 0 0;
+    border-radius: 1rem 1rem 0 0;
     padding: 0.1rem;
 }
 .half_card33{
+    color: tomato;
     /* text-shadow: 10px 18px 53px 10px rgba(0,0,255,0.79); */
-    padding: 0.1rem;
+    padding: 1rem;
+}
+.container_produitss{
+    background-color: lightcoral;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.container_produit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container_produitss{
+    background-color: tomato;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.produit_nom{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: 6rem;
+    align-items: start;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid black;
+}
+.produit_prix{
+    color: blue;
+    font-size: larger;
+    width: 6rem;
+    padding: 1rem;
+    align-items: start;
+    border: 1px solid black;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 </style>
 
@@ -316,41 +366,111 @@ $tab3=[
     ]
 ];
 ?>
-<div class="card3">
+<div class="card33" >
     <?php 
-    foreach ($tab as $valeur) {
-    echo "<div class=' half_card'> $valeur</div>";  
-    } ?>
+    foreach ($tab3 as $valeur) {
+            echo "<div class='card3'><div class='half_card3'>" .  $valeur["nom"] . "</div>  <div class='half_card33'>" . $valeur["prix"] ." £</div></div>";br();
+        }
+    ?>
 </div>
+
 <?php
 
+$tabProduct = [
+    "PC Gamer" => 3000,
+    "Ferrari Carbone" => 243000
+];
+foreach($tabProduct as $nom => $prix): ?>
+    <div class="card">
+        <h3><?php echo $nom; ?></h3>
+        <p>Prix : <?php echo number_format($prix, 2, ',', ' ') . " €"; ?></p>  
+        <!-- echo number_format($prix, 2, ',', ' ')  2 -> nb de décimales , -> on veut une virgule pour les décimales ' ' -> on veut un espace pour les milliers-->
+    </div>
+<?php endforeach; ?>
+<?php
 echo "<h2>4. Cartes produit HTML avec boucle</h2>";
-
 echo "<hr><p>* EXERCICE 5 — Addition simple</p>";
 
 // * Crée deux variables $prix1 et $prix2, calcule la somme et affiche
 // * le total sous forme de texte : "Total : XX €"
+$prix1 = 2.5; 
+$prix2 = 6.8;
 
-echo "<h2>5. Addition de deux prix</h2>";
+echo "<p>Total :" .  ($prix2 + $prix1) . " €</p>";
 
 echo "<hr><p>* EXERCICE 6 — Ajouter la TVA</p>";
 // * Crée une fonction ajouterTVA($prix) qui retourne le prix TTC (20% de TVA).
 // * ➕ Math : $prix * 1.2
-
-echo "<h2>6. Calcul de la TVA</h2>";
+function ajouterTVA($prix) {
+    $ttc = $prix * 1.2;
+    return $ttc;
+}
+echo ajouterTVA(10);
 
 echo "<hr><p> * EXERCICE 7 — Compter des éléments</p>";
 //
 // * Crée un tableau de produits et affiche le nombre total de produits.
 // * ➕ Fonction utile : count()
-echo "<h2>7. Compter les produits</h2>";
+$tab4=["roor", "farine", "montre", "châle", "nacre"];
+echo count($tab4);
 
 echo "<hr><p>* EXERCICE 8 — Fonction d'affichage réutilisable</p>";
 // * Crée une fonction afficherProduit($produit) qui prend un tableau associatif
 // * et affiche une carte HTML avec le nom et le prix du produit.
+?>
+<style>
 
-echo "<h2>8. Fonction réutilisable pour afficher un produit</h2>";
-
+.container_produit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container_produitss{
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.produit_nom{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: 6rem;
+    align-items: start;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid black;
+}
+.produit_prix{
+    color: blue;
+    font-size: larger;
+    width: 6rem;
+    padding: 1rem;
+    align-items: start;
+    border: 1px solid black;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+</style>
+<?php
+$produitss=[
+    ['nom' => 'stylo', 'prix' => 1.5],
+    ['nom' => 'crayon', 'prix' => 1.1],
+    ['nom' => 'critérium', 'prix' => 1.1],
+    ['nom' => 'cahier', 'prix' => 2.1],
+    ['nom' => 'taille crayon', 'prix' => 1.5],
+    [ 'nom' => 'gomme', 'prix' => 1.1],
+    [ 'nom' => 'feutre', 'prix' => 2.1],
+    ['nom' => 'feuilles canson', 'prix' => 1.5],
+    ['nom' => 'feuilles A3', 'prix' => 1.1],
+    ['nom' => 'feuilles A4', 'prix' => 2.1 ]
+];
+function afficherProduit($produitss) {
+    foreach ($produitss as $produit => $value) {
+        echo "<div class='container_produit'><div class= 'produit_nom'>" . $value["nom"] . "</div><div class= 'produit_prix'>" . $value["prix"] . "</div></div>";
+    }  
+}
+echo "<div class='container_produitss'>" . afficherProduit($produitss) . "</div>";
 echo "<hr><p>* EXERCICE 9 — Total du panier</p>";
 // * À partir d’un tableau de produits (chacun avec 'nom' et 'prix'),
 // * calcule et affiche le total général avec une boucle.
@@ -359,39 +479,72 @@ echo "<h2>9. Total d'un panier</h2>";
 echo "<hr><p>* EXERCICE 10 — Appliquer une remise</p>";
 // * Crée une fonction appliquerRemise($prix, $pourcentage)
 // * qui retourne le prix après réduction.
+$prix = 50;
+$pourcentage = 3;
+$tab5 = ['nom' => 'chaise', 'prix' => 23];
 
-echo "<h2>10. Prix avec remise</h2>";
+function appliquerRemise($prix, $pourcentage){
+    $reduction = $prix * ($pourcentage/100);
+    $total = $prix - $reduction;
+    return $total;
+}
+echo appliquerRemise($prix, $pourcentage);
+$nouveauPrix = appliquerRemise($tab5['prix'], $pourcentage);
+$tab5['prix'] = $nouveauPrix;
+var_dump($tab5); // int devient un float (décimale) car %
 
 echo "<hr><p>* EXERCICE 11 — Ajouter au panier</p>";
 // * Crée une fonction ajouterAuPanier($panier, $produit)
 // * qui retourne un nouveau tableau avec le produit ajouté.
-
-echo "<h2>11. Ajouter un produit au panier</h2>";
-
+$panier = ["mokotra", "tirus", "salsifis"];
+$nxproduit = "nuage";
+function ajouterAuPanier($panier, $nxproduit) {
+    $panier[] = $nxproduit;   // on rajoute le $nxproduit à la fin
+    return $panier;
+}
+$panier += ajouterAuPanier($panier, $nxproduit); //  += $panier sera toujours actualisé (avec x nouveau produits), sinon on peut mettre =
+echo "<pre>";
+print_r($panier);
+echo "</pre>";
+echo count($panier); br();
+echo "<button>panier : " . count($panier) . " article(s)</button>";
 echo "<hr><p>* EXERCICE 12 — Afficher un panier vide ou non</p>";
 // * Vérifie si un tableau $panier est vide. S'il l’est, afficher un message,
 // * sinon, afficher les produits.
 // * ➕ Fonction utile : empty()
 
+$panier1 = ["banana", "litchi"];
 
-echo "<h2>12. Vérification panier vide ou rempli</h2>";
+if (!empty($panier1)){
+    echo "<p>Vérif panier vide ou rempli : not empty</p>";
+}else{
+    echo "<p>Vérif panier vide ou rempli : empty</p>";
+}
 
 echo "<hr><p>* EXERCICE 13 — Moyenne des notes</p>";
 // * Crée un tableau de notes (ex : [12, 14, 18]) et calcule la moyenne.
 // * ➕ Fonctions utiles : array_sum(), count()
+$notes = [12, 14, 18];
 
-echo "<h2>13. Moyenne d'un tableau</h2>";
+function calculDemoyenne($array) {
+    $moyenne = array_sum($array)/count($array);
+    return $moyenne;
+}
+echo "<p>moyenne : " . calculDemoyenne($notes) . "</p>";
 
-echo "<hr><p>* EXERCICE 14 — Trier un tableau</p>";
+echo "<hr><p>* EXERCICE 14 — Trier un tableau par ordre croissant</p>";
 // * Crée un tableau de prix, trie-le par ordre croissant.
 // * ➕ Fonction utile : sort()
-
-echo "<h2>14. Tri des prix croissants</h2>";
+$prix = ["4.30", "12.80", "9.65", "4.55"];
+echo sort($prix);
+foreach ($prix as $key => $val) {
+    echo "fruits[" . $key . "] = " . $val . "\n";
+}
 
 echo "<hr><p>* EXERCICE 15 — Filtrer produits à moins de 10 €</p>";
 // * Crée une fonction qui retourne un tableau avec uniquement
 // * les produits à moins de 10€.
-// echo "<h2>15. Filtrer les produits abordables</h2>";
+// echo "<h5>15. Filtrer les produits abordables à moins de 10 €</h5>";
 
 echo "<hr><p>* EXERCICE 16 — Tableau d’utilisateurs</p>";
 // * Crée un tableau avec plusieurs utilisateurs (nom, email, âge)
