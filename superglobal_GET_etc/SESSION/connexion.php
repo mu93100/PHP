@@ -22,13 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "prenom : ".$_SESSION['prenom']."<br>";
     echo "nom : ".$_SESSION['nom'];
     echo "story : " . $_SESSION['story'];
+    // redirection vers page accueil
+    header("Location: accueil.php");
+    exit(); // TJRS appeler exit après une redirection
 }
 br();
-echo "identification entrée formulaire : " . $_POST["prenom"]; // valeur de le clé prenom ici c'est facundo
-
-// redirection cers page accueil
-header("Location: accueil.php");
-exit(); // TJRS appeler exit après une redirection
+// echo "identification entrée formulaire : " . $_POST["prenom"]; // valeur de le clé prenom ici c'est facundo
 
 
 ?>
@@ -42,7 +41,7 @@ exit(); // TJRS appeler exit après une redirection
     <title>Document</title>
 </head>
 <body>
-
+<h1>c o n n e x i o n</h1>
 <form method="post" action=""> <!--  on met ds post -->
             <label for="prenom">Prénom:</label>
             <input type="text"  name="prenom" required><br>
