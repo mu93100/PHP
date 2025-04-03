@@ -1,7 +1,9 @@
 <?php
 ?>
 <style>*{ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}</style>
+
 <h1>Superglobales  $_GET</h1>
+<p>avec GET on récupère des données via l'URL</p>
 <h4>$_GET est utilisé pour :</h4>
 <ul>
     <li>Passer des infos entre pages</li>
@@ -10,7 +12,7 @@
 <h3>Avantages de $_GET</h3>
 <ul>
     <li>Simple à utiliser</li>
-    <li>Données visibles ds l'URL</li>
+    <li>Données visibles ds l'URL !!! pb de confidentialité</li>
 </ul>
 
 
@@ -20,9 +22,10 @@
 <a href="get_page2?article=jean&couleur=black&prix=150">jean black</a>
 <p>on ouvre TJRS la p.2 ::: équivalent à création de p. article ds Wordpress</p>
 
-<p>$_GET est comme un tableau vide; après on ne voit plus de tab. 
+<p>$_GET est comme un tableau vide; après qd on bosse, on ne voit plus de tab. 
     mais des trucs cô ça ::: ?article=jean&couleur=black&prix=150</p> 
     <p>? --> indique le début des paramètres GET qui sont envoyés au fichier PHP<br>
+    ça veut dire que GET commence<br>
         & --> est utilisé pour séparer les paramèters ds une URL</p>
     
 <p>$_GET est utilisé pr envoyer des infos via l'URL<br> 
