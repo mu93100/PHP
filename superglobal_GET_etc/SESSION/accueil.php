@@ -1,22 +1,32 @@
-<h1 style="color:tomato">a c c u e i l</h1>
-
 <?php
-session_start();  // OBLIGATORY pour signifier que l'on est dans la SESSION
-var_dump($_SESSION);
-
-
-// <!--action="deconnexion.php" === renvoyer sur fichier deconnexion.php les infos qu'on récolte avec POST-->
-
-
-    if(isset($_SESSION['prenom']) && isset($_SESSION['nom'])){
-        echo "H E L L O  " . $_SESSION['prenom'];
-        echo '<form action="deconnexion.php" method="post"><button type="submit" name="logout">d é c o n n e x i o n</button></form>';
-        header("Location: deconnexion.php");
-        exit(); // TJRS appeler exit après une redirection
-    } else {
-        echo '<button type="submit" name="login">c o n n e x i o n</button>';
-    }
+session_start();
 ?>
-<!-- <form action="connexion.php" method="post"><button type="submit" name="login">c o n n e x i o n</button></form>'; -->
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+</head>
+<body>
+    <h1 style="color:tomato">a c c u e i l EXOSESSION</h1>
 
+    <?php
+    if (isset($_SESSION['prenom']) && isset($_SESSION['nom'])) {
+        echo "<p>HELLO " . htmlspecialchars($_SESSION['prenom']) . " 👋</p>";
+        // echo "<p>Nom : " . htmlspecialchars($_SESSION['nom']) . "</p>";
+        // echo "<p>Email : " . htmlspecialchars($_SESSION['email']) . "</p>";
+        // echo "<p>Histoire : " . nl2br(htmlspecialchars($_SESSION['story'])) . "</p>";
+
+        echo '<form action="deconnexion.php" method="post">
+            <button type="submit" name="logout">D É C O N N E X I O N</button>
+        </form>';
+    } else {
+        echo "<p>Tu n'es pas connecté. Retour à la connexion :</p>";
+        echo '<form action="connexion.php" method="get">
+            <button type="submit">C O N N E X I O N</button>
+        </form>';
+    }
+    ?>
+</body>
+</html>

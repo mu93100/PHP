@@ -28,7 +28,7 @@
         <br><br>
 
         <input type="submit" value="Envoyer">
-        <!-- Ne pas oublier de mettre type=submit pour que les données soient recupérer -->
+        <!-- Ne pas oublier de mettre type=submit pour que les données soient recupérées -->
         <!-- toujour dans la balise form -->
     </form>
 </body>
