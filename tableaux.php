@@ -142,7 +142,7 @@ br();
 echo "ville nassuf \$users : " . $users [0]["données perso"]["ville"]
 ?>
 <h3>PUSH   rajouter à la fin</h3>
-<p>$variable[] = "ajout élément à la fin"</p>
+<p>$variable[] = "ajout élément à la fin" </p>
 <?php
 $tab3 = ["element 0", "element 1", "element 2" ];
 $tab3[] = "ajout élément à la fin";
