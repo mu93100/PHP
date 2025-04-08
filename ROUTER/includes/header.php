@@ -15,14 +15,15 @@
                 <li><a href="index.php?page=apropos">à propos</a></li> 
             </ul>
             <ul>
-                <li><a href="home">home</a></li> 
-                <li><a href="profil">profil</a></li> 
-                <li><a href="apropos">à propos</a></li> 
+                <li><a href="home">h o m e</a></li> 
+                <li><a href="profil">p r o f i l</a></li> 
+                <li><a href="apropos">à    p r o p o s</a></li> 
                 <?php if (isset($_SESSION['connected']) && $_SESSION['connected']) { ?> 
                         <!-- $_SESSION['connected']===$_SESSION['connected']==true ::: si connected est vrai--> 
                     <li><a href="deconnexion">d é c o n n e x i o n</a></li>
                 <?php } else { ?>
                     <li><a href="connexion">c o n n e x i o n</a></li>
+                    <li><a href="language">l a n g u a g e</a></li>
                 <?php } ?>
             </ul>
 

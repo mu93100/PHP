@@ -40,7 +40,7 @@ $formPrenom=htmlspecialchars($_POST['prenom'] ?? $_COOKIE['cookie__prenom'] ?? '
 
 var_dump($_COOKIE);
 ?>
-<form action="" method="post">
+<form action="" method="post"> <!-- on peut mettre post en minuscule -->
     <label for="">p r é n o m</label>
     <input type="text" value="<?= $formPrenom; ?>" name="prenom" >
     
