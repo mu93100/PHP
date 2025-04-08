@@ -1,13 +1,5 @@
 <h1>c o n n e x i o n</h1>
-<form action="" method="post">
-    <label for="">p r é n o m</label>
-    <input type="text" name="prenom" >
-    
-    <label for="">n o m</label>
-    <input type="text" name="nom">
 
-    <input type="submit" name="connexion" value="s e c o n n e c t e r">
-</form>
 
 <?php
 var_dump($_POST);
@@ -26,9 +18,11 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST') {
             $_SESSION["nom"]=$_POST["nom"];
             $_SESSION["connected"]=true; // on rentre manuellement la ligne connected ds tab $_SESSION // on reprend connected ds header
             
-            // setcookie('cookie_prenom', $_POST["prenom"], time()+(86400*30), "/PHP/", "", false, true); 
+            // setcookie('cookie__prenom', $_POST["prenom"], time()+86400, "/PHP/ROUTER/pages/connexion", "", false, true); 
+            createCookie("prenom", $_POST["prenom"]);
+            createCookie("nom", $_POST["nom"]);
 // 'cookie_name' on donne un nom /PHP/...time()+(86400*30):::date/heure+ combien de tps on garde l'info en seconde. 
-// adresse ou on chope le cookie(formulaire) :::on prend adress ds URL de la page index
+// adresse ou on chope le cookie(formulaire) ::: chemin doss copié ds URL si il y a
         }
     }
     header("Location: index"); // redirection header exit
@@ -37,4 +31,21 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST') {
 var_dump($_POST);
 var_dump($_SESSION);
 // var_dump($_SERVER);
+
+$formNom=htmlspecialchars($_POST['nom'] ?? $_COOKIE['cookie__nom'] ?? '');
+$formPrenom=htmlspecialchars($_POST['prenom'] ?? $_COOKIE['cookie__prenom'] ?? '');
+//   ?? ::: si var existe et n'est pas null--> (affiche)est ce qu'il y a avant les ?? 
+// SINON si pas null et existe, (affiche)soit, correspond à ce qu'il y a après ?? SINON...
+// ?? remplacent un if else + isset et echo
+
+var_dump($_COOKIE);
 ?>
+<form action="" method="post">
+    <label for="">p r é n o m</label>
+    <input type="text" value="<?= $formPrenom; ?>" name="prenom" >
+    
+    <label for="">n o m</label>
+    <input type="text" value="<?= $formNom; ?>" name="nom">
+
+    <input type="submit" name="connexion" value="s e c o n n e c t e r">
+</form>

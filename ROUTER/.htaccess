@@ -1,9 +1,11 @@
-RewriteEngine 
-# On Redirige et reecrit AVEC URL PROPRES POUR SEO
+# Options -Indexes -MultiViews
+
+RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)$ index.php?page=$1 [QSA,L] 
+# On Redirige et reecrit AVEC URL PROPRES POUR SEO
 # index.php?page=$1 element de $_GET, sinon on peut mettre une page ex: index.php
 
 # Explications :

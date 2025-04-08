@@ -5,7 +5,8 @@ $routes=[
         'profil'=>'/pages/profil.php',
         'apropos'=>'/pages/apropos.php',
         '404' => '/pages/404.php',
-        'connexion' => '/pages/connexion.php'
+        'connexion' => '/pages/connexion.php',
+        'deconnexion' =>'/pages/deconnexion.php'
     ];
 $page=isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'home';
 echo __DIR__;
