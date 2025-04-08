@@ -1,8 +1,10 @@
-RewriteEngine On
+RewriteEngine 
+# On Redirige et reecrit AVEC URL PROPRES POUR SEO
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L] 
+# index.php?page=$1 element de $_GET, sinon on peut mettre une page ex: index.php
 
 # Explications :
 # RewriteEngine On : Active le module de réécriture d'URL
@@ -11,7 +13,7 @@ RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
 # !-f : Si ce n'est pas un fichier existant
 # !-d : Si ce n'est pas un dossier existant
 # RewriteRule : Redirige tout vers router.php
-# Sans ce fichier .htaccess, le routeur ne fonctionnerait pas car :
+# Sans ce fichier .htaccess, le routeur ne fonctionnerait pas car : FAUX
 # Les URLs propres comme /home donneraient une erreur 404
 # Le serveur chercherait un dossier ou fichier physique correspondant
 # Le routeur ne serait jamais appelé

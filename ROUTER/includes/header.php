@@ -18,7 +18,8 @@
                 <li><a href="home">home</a></li> 
                 <li><a href="profil">profil</a></li> 
                 <li><a href="apropos">à propos</a></li> 
-                <?php if (isset($_SESSION['connected']) && $_SESSION['connected']) { ?>
+                <?php if (isset($_SESSION['connected']) && $_SESSION['connected']) { ?> 
+                        <!-- $_SESSION['connected']===$_SESSION['connected']==true ::: si connected est vrai--> 
                     <li><a href="deconnexion">d é c o n n e x i o n</a></li>
                 <?php } else { ?>
                     <li><a href="connexion">c o n n e x i o n</a></li>

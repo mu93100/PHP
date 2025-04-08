@@ -11,6 +11,8 @@
 <p>Dans un formulaire utilisant la methode POST pour envoyer des données, les informations soumises ne sont pas visibles dasn l'URL</p>
 <p>Les données envoyées via POST sont incorporer dans le corps  de la requete HTPP</p>
 <p>Pour envoyer via méthode POST  indique method = "post" dans balise form</p>
+
+h
     
 <form action="back.php"  method="post">
 	<label>Pseudo </label><br>

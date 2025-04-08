@@ -21,10 +21,18 @@ var_dump($_POST);
 
 if ($_SERVER['REQUEST_METHOD']=== 'POST') {
     if (isset($_POST['connexion'])){
-        $_SESSION["prenom"]=$_POST["prenom"]; // attention !!! cô ajout d'une ligne ds tab multidimensionnel (avec clés et val.)
-        $_SESSION["nom"]=$_POST["nom"];
-        $_SESSION["connected"]=true; // on rentre manuellement la ligne connected ds tab $_SESSION
+        if (isset($_POST["prenom"]) && isset($_POST["nom"])) {
+            $_SESSION["prenom"]=$_POST["prenom"]; // attention !!! cô ajout d'une ligne ds tab multidimensionnel (avec clés et val.)
+            $_SESSION["nom"]=$_POST["nom"];
+            $_SESSION["connected"]=true; // on rentre manuellement la ligne connected ds tab $_SESSION // on reprend connected ds header
+            
+            // setcookie('cookie_prenom', $_POST["prenom"], time()+(86400*30), "/PHP/", "", false, true); 
+// 'cookie_name' on donne un nom /PHP/...time()+(86400*30):::date/heure+ combien de tps on garde l'info en seconde. 
+// adresse ou on chope le cookie(formulaire) :::on prend adress ds URL de la page index
+        }
     }
+    header("Location: index"); // redirection header exit
+    exit();
 }
 var_dump($_POST);
 var_dump($_SESSION);
