@@ -6,9 +6,9 @@
 
 
 
-// print '<pre>';
-// print_r($_POST);
-// print '<pre>';
+print '<pre>';
+print_r($_POST);
+print '<pre>';
 
 var_dump($_GET); // array vide car pas de GET
 var_dump($_POST); // array 'pseudo' => string 'ff' (length=2) // 'email' => string '' (length=0)

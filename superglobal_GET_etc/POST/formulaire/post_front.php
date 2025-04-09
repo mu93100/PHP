@@ -12,9 +12,9 @@
 <p>Les données envoyées via POST sont incorporer dans le corps  de la requete HTPP</p>
 <p>Pour envoyer via méthode POST  indique method = "post" dans balise form</p>
 
-h
+
     
-<form action="back.php"  method="post">
+<form action="post_back.php"  method="post">
 	<label>Pseudo </label><br>
 	<input type="text" name="pseudo"><br><br>
 
@@ -23,7 +23,8 @@ h
 
 	<input type="submit"  value="Envoyer">
 </form>
-
+<!-- "GET" → si la page est appelée via l'URL (ou un lien).
+"POST" → si la page est appelée via un formulaire avec method="post". -->
 
 
 </body>
