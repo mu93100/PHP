@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST') {
     header("Location: index"); // redirection header exit
     exit();
 }
-var_dump($_POST);
-var_dump($_SESSION);
+// var_dump($_POST);
+// var_dump($_SESSION);
 // var_dump($_SERVER);
 
 $formNom=htmlspecialchars($_POST['nom'] ?? $_COOKIE['cookie__nom'] ?? '');
@@ -38,7 +38,7 @@ $formPrenom=htmlspecialchars($_POST['prenom'] ?? $_COOKIE['cookie__prenom'] ?? '
 // SINON si pas null et existe, (affiche)soit, correspond à ce qu'il y a après ?? SINON...
 // ?? remplacent un if else + isset et echo
 
-var_dump($_COOKIE);
+// var_dump($_COOKIE);
 ?>
 <form action="" method="post"> <!-- on peut mettre post en minuscule -->
     <label for="">p r é n o m</label>

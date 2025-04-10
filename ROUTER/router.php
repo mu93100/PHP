@@ -7,7 +7,8 @@ $routes=[
         '404' => '/pages/404.php',
         'connexion' => '/pages/connexion.php',
         'deconnexion' =>'/pages/deconnexion.php',
-        'language' => '/pages/language.php'
+        'language' => '/pages/language.php',
+        'inscription' => '/pages/inscription.php'
     ];
 $page=isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'home';
 echo __DIR__;

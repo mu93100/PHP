@@ -9,11 +9,11 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <!-- <ul>
                 <li><a href="index.php?page=home">home</a></li> 
                 <li><a href="index.php?page=profil">profil</a></li> 
                 <li><a href="index.php?page=apropos">à propos</a></li> 
-            </ul>
+            </ul> -->
             <ul>
                 <li><a href="home">h o m e</a></li> 
                 <li><a href="profil">p r o f i l</a></li> 
@@ -23,6 +23,7 @@
                     <li><a href="deconnexion">d é c o n n e x i o n</a></li>
                 <?php } else { ?>
                     <li><a href="connexion">c o n n e x i o n</a></li>
+                    <li><a href="inscription">i n s c r i p t i o n</a></li>
                     <li><a href="language">l a n g u a g e</a></li>
                 <?php } ?>
             </ul>

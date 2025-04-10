@@ -1,4 +1,5 @@
 # Options -Indexes -MultiViews
+# POUR AVOIR url SIMPLE  // SANS ? ET =
 
 RewriteEngine On
 

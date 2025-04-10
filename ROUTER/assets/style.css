@@ -8,14 +8,20 @@ h1{
 }
 body{
     display: flex;
+    flex-direction: column;
 }
 main{
     flex: 1;
 }
+header{
+    display: flex;
+    justify-content: space-between;
+}
 footer{
+    align-items: center;
     height: 5rem;
     font-size: 3rem;
-    color: tomato;
+    color: rgb(1, 24, 8);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 900;
 }

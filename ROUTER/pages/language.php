@@ -1,5 +1,6 @@
 <?php
     if ($_SERVER['REQUEST_METHOD']=== 'POST'){
+    
         if (isset($_POST['set_language'])) {
             if (isset($_POST['language'])) {
                 $_SESSION['language']=$_POST['language'];
@@ -8,7 +9,9 @@
                 header("Location: index"); // ou index.php ?
                 exit();
             } 
-        }   
+        }   else {
+           $_SESSION['cookie__langueChoisie']='french';
+        }  
 }
 
 ?>
