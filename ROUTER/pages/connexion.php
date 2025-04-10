@@ -2,7 +2,7 @@
 
 
 <?php
-var_dump($_POST);
+// var_dump($_POST);
 // visio de la superglobal POST
 // array (size=3)
 //   'prenom' => string 'mu' (length=2)

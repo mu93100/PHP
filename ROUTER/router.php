@@ -11,7 +11,7 @@ $routes=[
         'inscription' => '/pages/inscription.php'
     ];
 $page=isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'home';
-echo __DIR__;
+// echo __DIR__;
 if (array_key_exists($page, $routes)){
     include_once __DIR__ . $routes[$page];
 } else{

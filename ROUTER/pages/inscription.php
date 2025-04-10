@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 
 
 <h2 style="text-align: center;">S ' I N S C R I R E</h2>
-<form method="post" action="form_back_end.php"> <!---action = données transférées ds la p. form_back_end --->
+<form method="post" action=""> <!---action = sur la m^me p.--->
     <label for="prenom">Prénom</label>
     <input type="text" name="prenom" required>
 
