@@ -1,0 +1,24 @@
+# Options -Indexes -MultiViews
+# POUR AVOIR url SIMPLE  // SANS ? ET =
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L] 
+# On Redirige et reecrit AVEC URL PROPRES POUR SEO
+# index.php?page=$1 element de $_GET, sinon on peut mettre une page ex: index.php
+
+# Explications :
+# RewriteEngine On : Active le module de réécriture d'URL
+# RewriteBase : Définit le chemin de base de l'application
+# RewriteCond :
+# !-f : Si ce n'est pas un fichier existant
+# !-d : Si ce n'est pas un dossier existant
+# RewriteRule : Redirige tout vers router.php
+# Sans ce fichier .htaccess, le routeur ne fonctionnerait pas car : FAUX
+# Les URLs propres comme /home donneraient une erreur 404
+# Le serveur chercherait un dossier ou fichier physique correspondant
+# Le routeur ne serait jamais appelé
+# C'est donc le .htaccess qui est le véritable "chef d'orchestre" qui fait que toutes les requêtes passent par votre routeur !
+# Note : Si vous ne trouvez pas ce fichier dans votre projet, il serait important de le créer pour que le routage fonctionne correctement.
