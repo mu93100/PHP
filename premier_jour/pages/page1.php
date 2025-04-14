@@ -5,6 +5,7 @@ include_once "../component/header.php";
 
 $variable = 123;
 
+
 ?>
 
 
