@@ -34,9 +34,10 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
         //  requete avec PREPARE et INSERT INTO
         $sql="INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES (:prenom, :nom, :sexe, :service, :date_embauche, :salaire)";
         // les : disent que les valeurs prenom, nom ETC sont vides
+        // qd on remplit les values, on met des '' autour de chaque val.
 
         //on stocke la requête SQL dans une var. $sql
-        $stmt = $pdo->prepare($sql); // -> : accéder à la méthode sur/pour $sql
+        $stmt = $pdo->prepare($sql); // -> : opérateur d'accès /accéder à la méthode sur/pour $sql
         // on prépare la requête fournie : $sql
         // elle est analysée par SQL
         // rien n'est envoyé à la base de données
