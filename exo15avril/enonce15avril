@@ -1,0 +1,27 @@
+1.Faire fichier sql pour base de donnée : 
+ 
+Table user 
+id auto increment  
+Is_admin  avec TINYINT NOT NULL DEFAULT 0 
+Nom 
+Passeword 
+Mail 
+ 
+Table produit 
+Id 
+Nom 
+Description 
+Categorie 
+ 
+2.creation mini app 
+ 
+Router non obligatoire 
+ 
+Faire header footer 
+Dans header faire menu navigation  home profil admin connexion/inscription 
+Dans home afficher liste des produits avec bouton afficher details qui est un lien avec pages detail_produit.php. Utiliser methode GET pour transiter les infos nécessaires. Detail_produit affiche les infos des produits. 
+ 
+Connexion/ inscription faire formulaire pour ajouter un user à la base de donnée pour page inscription. Pour page  connexion verifier si user existe puis se connecter et creer une session et cookies.  
+Ajouter biensure bouton de déconnexion. 
+Pour page admin afficher produit avec un bouton modifier et un bouton supprimer. Pour bouton modifier lien vers page modif_produit.php qui est un formulaire récupérant les infos du produit sélectionné. Modifier le produit via le form avec la soumision du form. 
+Pour bouton supprimer le produit sera supprimer de la base de donné 
