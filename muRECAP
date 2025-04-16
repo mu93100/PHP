@@ -1,0 +1,310 @@
+PHP_ROUND_HALF_DOWN
+TERNAIRE 
+PHP ds HTML ::: <div> <?= (cond) ? ' ' : ' ' ?>
+    </div>
+
+HTML ds PHP::: 
+if(cond) :?> <html> 
+    <?php else :?> <html> 
+    <?php endif; 
+
+if (cond) :?>
+    <div> il se passe ça </div>
+<?php else : ?>
+    <div> ou il se passe ceci </div>
+<?php endif;
+
+
+(isset() && !empty()) =env.= array_key_exists()
+
+
+function nom($var) {
+    echo $var ? "$varOK" : "not $varOK ";
+} ===
+function nom($var) {
+    if (array_key_exists($var )) {
+        echo $varOK;
+    } else {
+        echo "not $varOK ";
+    }
+}
+
+
+// pour afficher les erreurs
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+echo __LINE__."<br>"; // affiche le N° de ligne
+echo __FILE__."<br>"; // affiche chemin complet vers fichier
+echo __DIR__."<br>"; // affiche chemin complet vers doss
+
+saut de ligne "\n";
+
+incrémentation/ décrémentation
+$var++   ça incrémente de 1;
+$var--   ça décrémente de 1;
+$var-=4  ça décrémente de 4;
+$var+=$var2   ça incrémente de $var2;
+/=   *=  %=  ;
+
+
+opérateurs
+II   OU
+&&   ET
+XOR   SOIT l'un soit l'autre 
+(ex fournir un MDP ou ID  + password :::
+if (($user && $password) XOR ($id && $password)) {# code...};
+
+comparateurs
+==   equal
+===  identical
+!=   not equal
+!==  not identical
+<>   not equal
+
+SWITCH super pour router avec valeur === URL
+$var=«valeur»
+ on compare la var $var avec les valeurs des cases
+switch($var){
+    case "valeur1": 
+        echo "<p>valeur1/ url</p>";
+        break; // break obligatoire pour quitter la cond. une fois la case executée
+    case "valeur2": 
+        echo "<p>valeur2</p>";
+        break;
+    case "valeur3": 
+        echo "<p> valeur3 </p>";
+        break;
+    default : 
+        echo "<p> valeur </p>";
+        break;
+    
+}
+
+pour trouver le type echo gettype($a)."<br>";
+
+ex table :::
+<table>
+    <tr>
+        <th>Clé</th>
+        <th>Valeur</th>
+        <th>isset()</th>
+        <th>empty()</th>
+        <th>array_key_exists()</th>
+    </tr>
+ 
+    <?php foreach ($cles as $cle): ?>
+        <tr>
+            <td><strong><?= $cle ?></strong></td>
+            <td class="code">
+                <?= array_key_exists($cle, $tab) ? var_export($tab[$cle]) : '<i>Non défini</i>' ?>
+            </td>
+            <td><?= boolToIcon(isset($tab[$cle])) ?></td>
+            <td><?= boolToIcon(empty($tab[$cle])) ?></td>
+            <td><?= boolToIcon(array_key_exists($cle, $tab)) ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+
+PUSH
+$tab = ["element 0", "element 1", "element 2" ];
+$tab[] = "ajout élément à la fin";
+$tab[i] = "remplace l'élément index i";
+$tab[1] = "remplace l'élément index 1";
+array_push($tab, "élément ajouté avec array_push", "2ème élément ajouté avec array_push");
+
+$tabAssoc = [
+    "clé 0" => "val 0", 
+    "clé 1" => "val 1", 
+    "clé 2" => "val 2";
+    ]
+$tabAssoc["clé 3"] = "val 3"; on rajoute "clé 3" => "val 3"
+array_push($tabAssoc,["a"=>"aa"], ["b"=>"bb"], ["c"=>"cc"],)
+on rajoute un autre tableau index 3["a"=>"aa", "b"=>"bb", "c"=>"cc"] ds $tabAssoc
+
+
+longueur d'un tab. ::: count($tab);
+
+B O U C L E   F O R
+for($i=0; $i<count($tab); $i++){
+    echo $tab[$i];
+    br();
+}
+$i+2 --> on boucle pas ts les éléments))
+B O U C L E   F O R E A C H
+foreach() ::
+        foreach ($var as $clé => $valeur) {
+            # code...(echo  "je suis la clé : " . $clé .  " et je suis la valeur : " . $valeur ;
+
+            }
+
+B O U C L E   W H I L E ::: TANT QUE avec i++
+$i=0; 
+while ($i <= 5) {
+    echo "$i - - - ";
+    $i++;
+}
+B O U C L E   D O   W H I L E
+$j=11;
+do {
+    echo $j++ ."je fais tour de boucle";
+    br();
+} while ($j>10 && $j<15);
+
+variable globale === en dehors d'une Fo
+variable locale (de la Fo) === dans une Fo
+le mot clé global permet de récupérer une var. globale au sein d'une Fo
+$varGlo = "varGlo";  var. globale
+function nom(){
+    global $varGlo; // on récupère $varGlo
+    echo $varGlo;  // affiche ::: varGlo
+}
+echo nom();
++++ on peut rajouter 1 paramètre à la Fo 
+function nom($nb){
+    global $varGlo; // on récupère $varGlo
+    echo $varGlo + $nb;  // affiche ::: varGlo + nb
+}
+echo nom();
+
+SUPERGLOBALES === cô tab. vide
+Superglobale $_GET
+
+<a href="fichier?clé1=val1&clé2=val1&clé3=val1"> lien </a>
+::: équivaut à $1 = [clé1=>val1, clé2=>val2, clé3=>val3]
+ex 1 article :  article=>jupe, taille=>38, couleur=>rose, prix=>55
+page ::: aller à la page "fichier.php"
+? ::: début de la requète GET 
+& ::: pour séparer les paramètres ds une URL</p>
+TOUS les paramètres de GET (le chemin pour le fichier.php) se voit ds l'URL (2083 caractères MAX)
+requetes GET : SUPER Qd on cherche une jupe T38 rose avec FORMULAIRE
+echo "<p>article : " . $_GET['article'] . "</p>";
+echo "<p>couleur : " . $_GET['couleur'] . "</p>";
+echo "<p>prix : " . $_GET['prix'] . " £</p>";
+
+Superglobale $_POST pour formulaires
+<form action="post_back.php"  method="post">
+	<label>Pseudo </label><br>
+	<input type="text" name="pseudo"><br><br>
+
+	<label>Email</label><br>
+	<input type="text" name="email"><br><br>
+
+	<input type="submit"  value="Envoyer">
+</form>
+if(empty($_POST["pseudo"]) || empty($_POST["email"]))
+{
+    echo "erreur tous les champs doivent être remplis<br>" ;
+}else{
+    echo "prenom posté :  $_POST[pseudo] <br> " ;
+    echo "email posté :  $_POST[email] <br> " ;
+}
+//  ************* autre possibilité****************
+
+if(empty( $_POST['pseudo'] )){ 
+    echo " 🤬🤬🤬🤬ERREUR pseudo champs oligatoire";
+}
+else{
+        echo "🐸🐸🐸🐸Prénom posté :  $_POST[pseudo] <br>";
+    }
+
+
+if(empty( $_POST['email']) ){ 
+        echo " 🏴‍☠️🏴‍☠️🏴‍☠️ERREUR email champs oligatoire";
+    }
+else{
+        echo "🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈email posté : $_POST[email] <hr>";
+    }   
+
+Superglobale $_SESSION
+session_start(); TOUJOURS
+ex : formulaire de connexion
+<form method="post" action="">
+    <input type="text"  name="prenom" placeholder="P R E N O M" required><br>
+    <input type="text"  name="nom" placeholder="N O M" required><br>
+    <input type="email" name="email" placeholder="E M A I L" required><br>
+    <textarea name="story" rows="5" cols="33" placeholder="> racontes-toi"></textarea><br>
+    <input type="submit" value="V A L I D E R">
+</form>
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['prenom'] = $_POST['prenom'];
+    $_SESSION['nom'] = $_POST['nom'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['story'] = $_POST['story'] ?? '';
+
+    // Redirection vers la page d'accueil
+    header("Location: accueil.php");
+    exit();
+}
+déconnexion :::
+if (isset($_POST['logout'])) {   // logout --> c'est nous qu'on appelle log out
+    session_unset();   // supprime les variables de session
+    session_destroy(); //  détruit la session
+    header("Location: accueil.php");
+}
+// ?>
+<!-- // <h1 style="color:blue">d é c o n n e x i o nEXOSESSION</h1> -->
+
+home
+<?php
+    if (isset($_SESSION['prenom']) && isset($_SESSION['nom'])) {
+        echo "<p>HELLO " . htmlspecialchars($_SESSION['prenom']) . " 👋</p>";
+        // echo "<p>Nom : " . htmlspecialchars($_SESSION['nom']) . "</p>";
+        // echo "<p>Email : " . htmlspecialchars($_SESSION['email']) . "</p>";
+        // echo "<p>Histoire : " . nl2br(htmlspecialchars($_SESSION['story'])) . "</p>";
+
+        echo '<form action="deconnexion.php" method="post">
+            <button type="submit" name="logout">D É C O N N E X I O N</button>
+        </form>';
+    } else {
+        echo "<p>Tu n'es pas connecté. Retour à la connexion :</p>";
+        echo '<form action="connexion.php" method="get">
+            <button type="submit">C O N N E X I O N</button>
+        </form>';
+    }
+
+
+
+
+password 
+/**
+   * 🔐 Algorithmes de hachage disponibles avec password_hash() en PHP :
+   *
+   * 1. PASSWORD_DEFAULT :
+   *    - Utilise l’algorithme le plus sécurisé disponible (actuellement bcrypt).
+   *    - Recommandé pour la majorité des cas.
+   *    - Attention : peut changer dans les futures versions de PHP.
+   *
+   * 2. PASSWORD_BCRYPT :
+   *    - Utilise l’algorithme bcrypt (fixe).
+   *    - Génère une chaîne de 60 caractères.
+   *    - Très compatible avec les anciennes versions de PHP et les bases de données.
+   *    - Supporte une option 'cost' (coût de calcul, plus il est élevé, plus c’est sécurisé).
+   *      Exemple : ['cost' => 12]
+   *
+   * 3. PASSWORD_ARGON2I (PHP ≥ 7.2) :
+   *    - Utilise l’algorithme Argon2i.
+   *    - Conçu pour résister aux attaques par canal auxiliaire (side-channel).
+   *    - Supporte : memory_cost, time_cost, threads.
+   *
+   * 4. PASSWORD_ARGON2ID (PHP ≥ 7.3) :
+   *    - Variante hybride de Argon2i et Argon2d.
+   *    - Plus sécurisé que Argon2i seul.
+   *    - Fortement recommandé pour une sécurité maximale.
+   *
+   * Exemple de hachage :
+   *     $hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+   *     // ou avec options :
+   *     $hash = password_hash($mot_de_passe, PASSWORD_ARGON2ID, [
+   *         'memory_cost' => 1 << 17, // 128 MB
+   *         'time_cost' => 4,
+   *         'threads' => 2
+   *     ]);
+   *
+   * Pour vérifier un mot de passe :
+   *     if (password_verify($mot_de_passe_saisi, $hash_enregistre)) {
+   *         // Mot de passe correct
+   *     }
+   */

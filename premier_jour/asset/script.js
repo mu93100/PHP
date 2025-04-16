@@ -1,9 +1,9 @@
-const div=document.querySelector(".div")
+const bisque=document.querySelector(".bisque")
 
 
-div.addEventListener("click",function(){
+bisque.addEventListener("click",function(){
 
-    div.classList.toggle("black")
+    bisque.classList.toggle("black")
 })
 
 

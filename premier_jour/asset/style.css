@@ -1,7 +1,9 @@
-.div{
+.bisque{
     color: red;
     cursor: pointer;
-    
+    width: 3rem;
+    height: 3rem;
+    background-color: bisque;
 }
 
 .black{

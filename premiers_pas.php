@@ -98,7 +98,7 @@ echo __DIR__."<br>"; // affiche chemin complet vers doss
 ini_set('display_errors', 1);
 //display error est activé en mettant valeur 1
 ini_set('display_startup_errors', 1);
-// doit être activé pour afficher les erreur
+// doit être activé pour afficher les erreurs
 error_reporting(E_ALL);
 // configure PHP pour signaler tous les types d'erreurs
     -->
@@ -199,6 +199,10 @@ br();
 $sept=7;
 echo --$sept; // ça affiche DIRECT $sept incrémenté de 1 --> 6
 br();
+echo $sept-=4; // ça affiche DIRECT $sept incrémenté de 1 --> 6
+br();br();
+$huit=8;
+echo $huit%=5;
 ?>
 
 <h2>S T U C T U R E S <span style=color:blue>C O N D I T I O N N E L L E S</span> </h2>
