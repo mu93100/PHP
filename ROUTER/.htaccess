@@ -22,3 +22,8 @@ RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
 # Le routeur ne serait jamais appelé
 # C'est donc le .htaccess qui est le véritable "chef d'orchestre" qui fait que toutes les requêtes passent par votre routeur !
 # Note : Si vous ne trouvez pas ce fichier dans votre projet, il serait important de le créer pour que le routage fonctionne correctement.
+
+
+# ligne 8
+# avec method GET pour router on a                  RewriteRule ^(.+)$ index.php?page=$1 [QSA,L] 
+# avec parse_url on enlève après le ? (method GET ) RewriteRule ^(.+)$ index.php
