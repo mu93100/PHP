@@ -21,6 +21,7 @@ require_once "config/bdd.php";
 </head>
 
 <body>
+    <a href="/CRUD/exemple/boulang.php">exemple CRUD boulang_crud</a>
     <h1>CRUD en PHP avec PDO</h1>
     <p>CRUD est un acronyme qui désigne les quatre opérations de base que l'on peut effectuer sur des données :</p>
     <ul>
@@ -36,6 +37,8 @@ include_once "controller/01createController.php";
 include_once "controller/02readController.php";
 include_once "controller/03updateController.php";
 include_once "controller/04deleteController.php";
+
+
 
 ?>
 
