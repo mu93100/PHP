@@ -317,49 +317,51 @@ class Etudiant{
         $this->note = $n;
     }
     public function getNote() {
-        echo $this->nom . " a la note " . 
-        
+        return $this->note;
+        // echo $this->nom . " a la note " . $this->note;
     }
-
+    public function setNote($a) {
+        $this->note = $a;
+    }
 }
 
 // corrigé nawel
 
-class Etudiant{
-    public $nom;
-    private $notes;
-    public function __construct($a,$b)
-    {
-        $this->nom = $a;
-        $this->setnotes($b);
-    }
-    public function getnotes(){
-        return $this->notes;
-    }
-    public function setnotes($c){
-        if(($c >= 0) && ($c <= 20)){
-            $this->notes=$c;
-        }else{
-            echo "note pas comprise entre 0 et 20 ❗ <br>";
-        }
-    }
-    public function AfficherMention(){
-        if($this->notes >=16){
-            echo "Mention très bien <br>";
-        }elseif ($this->notes >=14){
-            echo "Mention bien <br>";
-        }elseif ($this->notes >=12){
-            echo "Mention Assez bien <br>";
-        }elseif ($this->notes >=10){
-            echo "Mention Passable <br>";
-        }else{
-            echo "Echec <br>";
-        }
-    }
-}
+// class Etudiant{
+//     public $nom;
+//     private $notes;
+//     public function __construct($a,$b)
+//     {
+//         $this->nom = $a;
+//         $this->setnotes($b);
+//     }
+//     public function getnotes(){
+//         return $this->notes;
+//     }
+//     public function setnotes($c){
+//         if(($c >= 0) && ($c <= 20)){
+//             $this->notes=$c;
+//         }else{
+//             echo "note pas comprise entre 0 et 20 ❗ <br>";
+//         }
+//     }
+//     public function AfficherMention(){
+//         if($this->notes >=16){
+//             echo "Mention très bien <br>";
+//         }elseif ($this->notes >=14){
+//             echo "Mention bien <br>";
+//         }elseif ($this->notes >=12){
+//             echo "Mention Assez bien <br>";
+//         }elseif ($this->notes >=10){
+//             echo "Mention Passable <br>";
+//         }else{
+//             echo "Echec <br>";
+//         }
+//     }
+// }
 
-$Etudiant1 = new Etudiant("Nawel", 20);
-var_dump($Etudiant1) ;
-$Etudiant1->AfficherMention();
+// $Etudiant1 = new Etudiant("Nawel", 20);
+// var_dump($Etudiant1) ;
+// $Etudiant1->AfficherMention();
 
 ?>
