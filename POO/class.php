@@ -199,7 +199,7 @@ echo $chat->getEspece();
 echo "<br>";
 $chat->setEspece("lapin");
 ?>
-<p>PRIVATE AVEC GET ET SET pour modifier la propriété<br> GET --> prendre<br>SET --> modifier</p>
+<h2>PRIVATE AVEC GET ET SET pour modifier la propriété<br> GET --> prendre<br>SET --> modifier</h2>
 <p>(private $espece :: la Pté est protégée, on ne peut pas y accéder directement, on est obligé de passer par getter et setter)</p>
 <p>setEspece() :: méthode de contrôle, vérifie si la val. est correcte</p>
 <p>getEspece() :: méthode de lecture, retourne la val. de la propriété</p>

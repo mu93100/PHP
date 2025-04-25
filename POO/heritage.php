@@ -7,6 +7,14 @@
 <p>class Animal ::: class mère</p>
 <p>class Chat Chien ETC ::: class CHD</p>
 
+<p>
+Caractéristique	Détail
+Instanciation	        ❌ Impossible d’instancier une classe abstraite directement
+Héritage obligatoire	✅ Doit être étendue (extends) par une autre classe
+Méthodes abstraites	    ❗ Doivent être définies dans les classes enfants
+Objectif	             Fournir une base commune / un contrat de développement
+</p>
+
 <h4>EX ::</h4>
 
 <?php
@@ -30,7 +38,7 @@ $chien1 = new Chien();
 $chien1->respirer();
 $chien1->aboyer() ;
 ?>
-<h4>Redéfinir une méthod (Override)</h4>
+<h3>Redéfinir une méthod (Override)</h3>
 <?php 
 class Poisson extends Animal{
     // CAS 1 --> redéfinition complete de la method == ON ECRASE la version parente QUE sur la class Poisson
@@ -89,7 +97,7 @@ $voiture1->turbo()
 
 ?>
 <h2>abstract class</h2>
-<p>Une class abstraite ne êut pas être instanciée (pas de Nlle version de cet objet)</p>
+<p>Une class abstraite ne peut pas être instanciée (pas de Nlle version de cet objet)</p>
 <p> Elle sert de modèle aux class qui l'étendent et peut contenir :</p>
 <li>des method normales avec du code</li>
 <li>des method abstraites sans code (à définir obligatoirement, et qui sont continuées)</li>
@@ -117,3 +125,67 @@ $rex = new ChienAA("Rex");
 $rex->sePresenter();
 $rex->crier();
 ?>
+
+<h2>Utilisation de final</h2>
+<p>Le mot clé final empêche l'héritage /la surcharge (redéfinition) d'une method</p>
+<p>Peut être utilisée sur class, method, propriétés</p>
+<p>avec final devant class --> on ne peut pas créer de class enfant de cette classe<br>
+final class MaClassFinal{ };    <br>
+class MaClassFinalEnfant extends MaClassFinal{PAS POSSIBLE} <br>
+</p>
+<p>avec final devant method     <br>
+--> la class enfant peut utiliser la method mais pas la modifier avec parent::method(), ni l'écraser<br>
+<li>pour vérouiller un comportement spécifique qui ne doit pas être modifié</li>
+<li>Pour garantir la sécu des données</li>
+<li>Pour éviter les erreurs et abus d'héritage</li>
+</p>
+<?php
+class Employe{
+    protected string $nom;
+    public function __construct(string $nom) {
+        $this->nom = $nom;
+    }
+    final public function travailler()
+    {
+        echo "$this->nom travaille sérieusement.<br>";
+    }
+}
+class Manager extends Employe
+{
+    // ❌ ERREUR ! On ne peut pas redéfinir une méthode final
+    /*
+    public function travailler() {
+        echo "$this->nom travaille en dirigeant l'équipe.<br>";
+    }
+    */
+    public function diriger()
+    {
+        echo "$this->nom dirige une équipe.<br>";
+    }
+}
+$m = new Manager("Sophie");
+$m->travailler(); // fonctionne
+$m->diriger();
+?>
+<h2>Trait</h2>
+<p>trait en PHP est une sorte de bloc de code réutilisable.</p>
+<p>Il permet de partager des méthodes ou propriétés entre plusieurs classes,
+sans avoir à utiliser l'héritage (extends).<br>
+Contrairement à une classe, un trait ne peut pas être instancié directement.<br>
+On l’utilise dans une classe avec le mot-clé "use".<br>
+C’est très utile quand plusieurs classes ont des comportements identiques,
+mais qu’elles n’ont pas de lien logique pour hériter d’une même classe.<br>
+Exemple :</p>
+trait Logger {
+    public function log($message) {
+        echo "[LOG] " . $message;
+    }
+}
+class Utilisateur {
+    use Logger;
+}
+
+$u = new Utilisateur();
+$u->log("Utilisateur connecté.");  // Affiche : [LOG] Utilisateur connecté.
+
+<p>Ce système permet de factoriser du code sans casser la hiérarchie objet.</p/>

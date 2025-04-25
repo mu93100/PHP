@@ -69,3 +69,24 @@ class Article{
 <p>Avec ce mode PHP NE CONVERTIT PAS les types int et string ::: A EVITER ou pour code</p>
 
 <p>https://tainix.fr/article-technique/Bonnes-pratiques-PHP-2-typage-protection-et-comparaison-stricte</p>
+
+<h3>Les types disponibles en PHP</h3>
+<li>int : un entier</li>
+<li>string : une chaine de caractères</li>
+<li>bool : un booléen, ne peut donc contenir que true ou false</li>
+<li>array : un tableau</li>
+
+<p>Mais il y en a d’autres :</p>
+<li>float : un nombre décimal à virgule</li>
+<li>object : l’instance d’une classe</li>
+<li>callable : une fonction qui peut être appelée</li>
+<li>iterable : cela signifie qu’il peut être parcouru par un foreach. Donc soit un tableau, soit un objet qui implémente l’interface Iterator</li>
+<li>mixed : représente n’importe quel type !</li>
+<li>ressource : représente une ressource externe, comme des fichiers ou la connexion à une base de données</li>
+<li>null : ne peut contenir que la valeur « null »</li>
+<li>true : ne peut contenir que la valeur « true »</li>
+<li>false : ne peut contenir que la valeur « false »</li>
+
+<p>Et les types dédiés aux retours :</p>
+<li>void : indique qu’une fonction ne retourne pas de valeur</li>
+<li>never : indique qu’une fonction ne retourne jamais rien, par exemple si elle émet une exception ou si elle déclenche (volontairement) une boucle infinie</li>
