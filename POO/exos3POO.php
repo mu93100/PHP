@@ -224,7 +224,7 @@ class Banque{
     }
     
 }
-corrigé FAFA
+// corrigé FAFA
 class Banque
 {
     private string $nomClient;

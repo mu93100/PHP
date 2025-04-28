@@ -101,6 +101,9 @@ $voiture1->turbo()
 <p> Elle sert de modèle aux class qui l'étendent et peut contenir :</p>
 <li>des method normales avec du code</li>
 <li>des method abstraites sans code (à définir obligatoirement, et qui sont continuées)</li>
+<li>avec astract class ::: on est obligé de mettre protected Ptés
+    
+</li>
 <br><br>
 
 <?php
@@ -176,6 +179,7 @@ On l’utilise dans une classe avec le mot-clé "use".<br>
 C’est très utile quand plusieurs classes ont des comportements identiques,
 mais qu’elles n’ont pas de lien logique pour hériter d’une même classe.<br>
 Exemple :</p>
+<?php
 trait Logger {
     public function log($message) {
         echo "[LOG] " . $message;
@@ -187,5 +191,5 @@ class Utilisateur {
 
 $u = new Utilisateur();
 $u->log("Utilisateur connecté.");  // Affiche : [LOG] Utilisateur connecté.
-
+?>
 <p>Ce système permet de factoriser du code sans casser la hiérarchie objet.</p/>
