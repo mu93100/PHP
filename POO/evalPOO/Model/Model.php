@@ -49,5 +49,8 @@ class Jupe extends Model{
 
 
 
-
+// prenser à mettre les propriétés en protected et pas en public
+// pas de getter et setter
+// utilisation de l'id est incorrecte je n'enleve pas de point ici
+// 17/20
 ?>
