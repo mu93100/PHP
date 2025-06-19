@@ -1,0 +1,138 @@
+5-- SQL  FORMULES
+-- creation BDD
+CREATE DATABASE IF NOT EXISTS boulangerie_simple;
+USE boulangerie_simple;
+-- Table des catégories (ex: Pain, Viennoiserie...)
+CREATE TABLE IF NOT EXISTS categorie (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL
+);
+
+-- Table des produits (catégorie non liée par clé étrangère, juste un champ texte)
+CREATE TABLE IF NOT EXISTS produit (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prix DECIMAL(5,2) NOT NULL,
+    categorie VARCHAR(100) NOT NULL
+);
+-- FIN creation BDD
+
+
+SELECT nom, prenom
+FROM utilisateurs
+WHERE age >= 18;
+SELECT COUNT(*) AS nombre_clients
+FROM clients;
+
+-- Exemple avec SUM()
+SELECT SUM(salaire) AS total_salaires
+FROM employes;
+SELECT nom, prenom, email
+FROM clients
+ORDER BY nom DESC;
+
+-- Trier les clients par nom, puis par prénom
+SELECT nom, prenom, email
+FROM clients
+ORDER BY nom ASC, prenom ASC
+
+-- Récupérer les 10 premiers clients
+SELECT nom, prenom, email
+FROM clients
+ORDER BY nom ASC
+LIMIT 10;
+
+-- Récupérer les clients 11 à 20
+SELECT nom, prenom, email
+FROM clients
+ORDER BY nom ASC
+LIMIT 10 OFFSET 10;
+
+-- Récupérer les clients dont le nom commence par 'D'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom LIKE 'D%';
+
+-- Récupérer les clients dont le nom se termine par 'on'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom LIKE '%on';
+
+-- Récupérer les clients dont le nom contient 'on'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom LIKE '%on%';
+
+-- Récupérer les clients dont le nom ne contient pas 'on'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom NOT LIKE '%on%';
+
+-- Récupérer les clients dont le nom est 'Dupont' ou 'Durand'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom IN ('Dupont', 'Durand');
+
+-- Récupérer les clients dont le nom n'est pas 'Dupont' ou 'Durand'
+SELECT nom, prenom, email
+FROM clients
+WHERE nom NOT IN ('Dupont', 'Durand');
+
+-- Récupérer les clients dont l'âge est compris entre 20 et 30 ans
+SELECT nom, prenom, email
+FROM clients
+WHERE age BETWEEN 20 AND 30;
+
+-- Récupérer les clients dont l'adresse est NULL
+SELECT nom, prenom, email
+FROM clients
+WHERE adresse IS NULL;
+
+-- Récupérer le nombre de clients par ville
+SELECT ville, COUNT(*) AS nombre_clients
+FROM clients
+GROUP BY ville;
+
+-- Récupérer les villes ayant plus de 10 clients
+SELECT ville, COUNT(*) AS nombre_clients
+FROM clients
+GROUP BY ville
+HAVING COUNT(*) > 10;
+
+-- Récupérer les villes des clients (avec un alias) --AS permet de renommer une colonne ou une table dans une requête.
+SELECT DISTINCT ville AS ville_client
+FROM clients;
+-- Récupérer les clients et leurs commandes
+SELECT clients.nom, clients.prenom, commandes.date
+FROM clients
+INNER JOIN commandes ON clients.id = commandes.client_id;
+
+-- Récupérer les clients ayant passé au moins une commande
+SELECT nom, prenom
+FROM clients
+WHERE id IN (
+    SELECT client_id
+    FROM commandes
+);
+
+-- Récupérer les clients ayant passé au moins une commande
+SELECT clients.nom, clients.prenom, commandes.nombre
+FROM (
+    SELECT id, nom, prenom
+    FROM clients
+) AS clients
+
+INNER JOIN (
+    SELECT client_id, COUNT(*) AS nombre
+    FROM commandes
+    GROUP BY client_id
+) AS commandes ON clients.id = commandes.client_id;
+
+-- Insérer un client dans la table clients
+INSERT INTO clients (nom, prenom, email)
+VALUES ('Martin', 'Pierre', 'pierre.martin@email.com');
+
+-- Mettre à jour l'adresse e-mail d'un client
+UPDATE clients
+SET email = 'pierre.martin@nouveau-email.com'
+WHERE id = 1; 

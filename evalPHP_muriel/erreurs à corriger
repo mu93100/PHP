@@ -1,0 +1,61 @@
+db.php
+ 
+	$mysqlClient = new PDO('mysql:host=localhost;dbname=forum;charset=utf8', 'root');
+ 
+router.php
+
+    '/connection' => 'ConnectionController.php',
+
+ConnectionController.php
+
+	'role' => $user['name']
+ 
+HomeController.php
+
+	$query = "SELECT `id`, `title`, `description`, `creation_date` FROM `subject`";
+ 
+subject.view.php
+<button type="submit" class="btn colorPurpel mt-3">Ajout du sujet</button>
+ 
+AllArticle.view.php
+<a href="/article?id=<?= $article['id'] ?>" class="btn colorPink">Aller voir l'article</a>
+
+head.php
+<?php
+
+            if(isset($_SESSION['user'])){
+
+                ?>
+<li class="nav-item">
+<a class="nav-link text-white" href="/logout"><i class="fa-solid fa-circle-plus"></i> Deconnexion</a>
+</li>
+<?php
+
+                if($_SESSION['user']['role']== "Admin"){
+
+                    ?>
+<li class="nav-item">
+<a class="nav-link text-white" href="/users"><i class="fa-solid fa-circle-plus"></i> Utilisateurs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-white" href="/subject"><i class="fa-solid fa-circle-plus"></i> Ajout sujet</a>
+</li>
+<?php
+
+                }
+
+            } else {
+
+            ?>
+<li class="nav-item">
+<a class="nav-link text-white" href="/register"><i class="fa-solid fa-circle-plus"></i> Inscription</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-white" href="/connection"><i class="fa-solid fa-circle-plus"></i> Connexion</a>
+</li>
+<?php
+
+            }
+
+            ?>
+ 
