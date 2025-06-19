@@ -30,16 +30,22 @@ class Livre
         $this->disponible = $d;
     }
     public function getTitre(): string { return $this->titre; }
+    // OU 
+    // public function getTitre(): string { 
+    //     return $this->titre; 
+    // }
+    // Fonctions pour récupérer les valeurs des propriétés du livre.
     public function getAuteur(): string { return $this->auteur; }
     public function getAnnee(): int { return $this->annee; }
     public function getDisponible(): bool { return $this->disponible; }
     public function getNombreEmprunts(): int { return $this->nombreEmprunts; }
 
     public function setDisponible(bool $d): void { $this->disponible = $d; }
+
     public function emprunter(): string {
-        if ($this->disponible) {
-            $this->nombreEmprunts++;
-            $this->setDisponible(false);
+        if ($this->disponible) { // quand emprunter() , si $disponible existe
+            $this->nombreEmprunts++; // on rajoute un nb d'emprunt
+            $this->setDisponible(false); // $disponible devient false == valeur obtenue après emprunt
             return "✅ Emprunt réussi";
         } else {
             return "❌ Livre déjà emprunté";
@@ -61,24 +67,37 @@ if (!isset($_SESSION['livres'])) {
     $_SESSION['livres'] = [];
 } //  le code vérifie si la variable $_SESSION['livres'] existe. 
 // Si elle n'existe pas, elle est initialisée comme un tableau vide.
+//IA ::: Si liste des livres n'existe pas encore dans session, on la crée sous forme de tableau vide.
 
+
+// if (isset($_POST['ajouter'])) { // Quand le bouton "Ajouter" est cliqué
+//     // Récupère les données du formulaire
+//     $titre = $_POST['titre'] ?? ''; // on peut enlever ?? '' car on a mis required pour ts les champs du form ajouter
+//     $auteur = $_POST['auteur'] ?? '';
+
+//     $input = $_POST['annee'] ?? null;
+//     $annee = is_numeric($input) ? (int) $input : "indefini"; // int ou string
+//     // Si les champs sont remplis, on crée un livre et on l’ajoute en session
+//     if ($titre && $auteur && $annee) {
+//         $livre = new Livre($titre, $auteur, $annee, true); // disponible = true
+//         $_SESSION['livres'][] = $livre; // ajout dans la liste des livres
+//     }
+// }
 // Quand le bouton "Ajouter" est cliqué
 if (isset($_POST['ajouter'])) {
-    // Récupère les données du formulaire
-    $titre = $_POST['titre'] ?? '';
-    $auteur = $_POST['auteur'] ?? '';
-
-    $input = $_POST['annee'] ?? null;
-    $annee = is_numeric($input) ? (int) $input : "indefini"; // int ou string
-    // Si les champs sont remplis, on crée un livre et on l’ajoute en session
-    if ($titre && $auteur && $annee) {
-        $livre = new Livre($titre, $auteur, $annee, true); // disponible = true
-        $_SESSION['livres'][] = $livre; // ajout dans la liste des livres
-    }
+        $_SESSION['livres'][] = new Livre(
+        $_POST['titre'], 
+        $_POST['auteur'], 
+        is_numeric($_POST['annee']) ? $_POST['annee'] : "indéfini",
+        true
+        );
 }
+// on peut écrire sur 1 seule ligne :: if (isset($_POST['ajouter'])) {
+// $_SESSION['livres'][] = new Livre($_POST['titre'], $_POST['auteur'], is_numeric($_POST['annee']) ? $_POST['annee'] : "indéfini",true);}
+
 // Quand le bouton "Emprunter" est cliqué
 if (isset($_POST['emprunter'])) {
-    $index = (int) $_POST['index']; // index du livre dans la session
+    $index = (int) $_POST['index']; // index du livre dans la session sur lequel on clique emprunter sur liste livres
     $message = $_SESSION['livres'][$index]->emprunter(); // appel à la méthode emprunter()
 }
 // Quand le bouton "Rendre" est cliqué
@@ -102,7 +121,7 @@ if (isset($_POST['rendre'])) {
     <form method="POST">
         <input type="text" name="titre" placeholder="Titre" required>
         <input type="text" name="auteur" placeholder="Auteur" required>
-        <input type="number" name="annee" placeholder="Année" required>
+        <input type="text" name="annee" placeholder="Année" required>
         <button type="submit" name="ajouter">Ajouter</button>
     </form>
     
