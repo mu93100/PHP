@@ -1,4 +1,4 @@
--- SQL  FORMULES
+5-- SQL  FORMULES
 -- creation BDD
 CREATE DATABASE IF NOT EXISTS boulangerie_simple;
 USE boulangerie_simple;

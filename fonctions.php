@@ -164,7 +164,7 @@ $infos = ["nom" => "Alice", "email" => "alice@test.com"];
 echo "array_keys : affiche les clés\n";br();
 print_r(array_keys($infos));br();br();
 
-// in_array() : Vérifie si une valeur est présente
+// in_array() : Vérifie si une valeur est présente ds tab.
 echo "in_array : 'Alice' est-il dans les valeurs ? ";
 echo in_array("Alice", $infos) ? "Oui\n" : "Non\n";br();br();
 
@@ -185,6 +185,8 @@ echo "strtolower : " . strtolower("BObOUR") . "\n";br();
 
 // ucfirst() : Majuscule à la 1re lettre
 echo "ucfirst : " . ucfirst("salut") . "\n";br();
+$nom = "chat";
+echo ucfirst($nom); // Affiche : Chat
 
 // explode() : Découpe une chaîne
 echo "<br>";
@@ -242,6 +244,8 @@ echo "empty(\$vide) : " . (empty($vide) ? "Oui\n" : "Non\n");br();
 
 // is_array()
 echo "is_array(\$fruits) : " . (is_array($fruits) ? "Oui\n" : "Non\n");br();
+
+// is_numeric
 
 // var_dump() : type + valeur
 echo "var_dump de \$tab :\n";br();
