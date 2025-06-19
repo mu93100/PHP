@@ -90,7 +90,7 @@ if (isset($_POST['rendre'])) {
     <!-- Message -->
     
     <!-- FORMULAIRE D'AJOUT -->
-    <h2>➕ Ajouter un livre</h2>
+    <h2>Ajouter un livre</h2>
     <form method="POST">
         <input type="text" name="titre" placeholder="Titre" required>
         <input type="text" name="auteur" placeholder="Auteur" required>
