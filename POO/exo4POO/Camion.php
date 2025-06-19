@@ -9,7 +9,7 @@ class Camion extends Vehiculess{
     }
     public function afficherDetails() : string {
         parent::afficherDetails();
-        return "❗ Camion soumis à réglementation de charge ❗";
+        return "❗ Camion soumis à réglementation de charge  je suis muriel❗";
         }
 }
 ?>
